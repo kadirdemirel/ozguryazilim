@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Movie List</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Movie Collection</h1>
+		<hr>
+		<h2>Save Actor</h2>
+		<form action="#" th:action="@{/saveActor}" th:object="${actor}"
+			method="POST">
+			<input type="text" th:field="*{name}" placeholder="Actor Name"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{lastName}" placeholder="Actor LastName"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{role}" placeholder="Actor Role"
+				class="form-control mb-4 col-4"> <select
+				class="form-control" required="required" th:value="${actor.movie}"
+				name="movie" id="movie">
+				<option th:each="mov : ${movie}" th:value="${mov.id}"
+					th:text="${mov.movieName}"></option>
+			</select>
+			<br>
+			<button type="submit" class="btn btn-success col-2">Save
+				Actor</button>
+<hr>
+		</form>
+		<a th:href="@{/}" class="btn btn-outline-info">Back to Movie List</a>
+	</div>
+</body>
+</html>

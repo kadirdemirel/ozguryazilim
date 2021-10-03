@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Movie List</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Movie Collection</h1>
+		<hr>
+		<h2>Save Movie</h2>
+		<form action="#" th:action="@{/saveMovie}" th:object="${movie}"
+			method="POST">
+			<input type="text" th:field="*{movieName}" placeholder="Movie Name"
+				class="form-control mb-4 col-4"> <input type="date"
+				th:field="*{publicationYear}" placeholder="Publication Year"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{description}" placeholder="Description"
+				class="form-control mb-4 col-4"> <input type="text"
+				th:field="*{media}" placeholder="Media"
+				class="form-control mb-4 col-4"> 
+				
+			<button type="submit" class="btn btn-success col-2">Save Movie</button>
+<hr>
+		</form>
+			<a th:href="@{/}" class="btn btn-outline-info">Back to Movie List</a>
+	</div>
+</body>
+</html>

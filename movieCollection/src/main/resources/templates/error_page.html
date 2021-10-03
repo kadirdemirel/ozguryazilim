@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Error Page</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container my-2">
+
+		<div class="alert alert-danger" role="alert">You cannot delete
+			the movie without deleting the actors or language options connected
+			to the movie !</div>
+		<div class="alert alert-primary" role="alert">Filme bağlı
+			oyuncuları veya dil seçeneklerini silmeden filmi silemezsiniz !</div>
+		<a th:href="@{/}" class="btn btn-outline-info">Back to Movie List</a>
+
+
+
+
+
+	</div>
+
+</body>
+</html>
