@@ -72,7 +72,9 @@
 							<td th:text="${movie.publicationYear}"></td>
 							<td th:text="${movie.type}"></td>
 							<td th:text="${movie.description}"></td>
-							<td th:text="${movie.media}"></td>
+							<td><a th:href=${movie.media}> <img alt="Google Login"
+									title="Google login" th:src="@{${movie.media}}"/>
+							</a></td>
 							<td><a th:href="@{/showFormForUpdate/{id}(id=${movie.id})}"
 								class="btn btn-warning">Update</a>
 								<hr> <a th:href="@{/deleteMovie/{id}(id=${movie.id})}"
